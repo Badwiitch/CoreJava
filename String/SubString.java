@@ -14,6 +14,8 @@ public class SubString {
 		System.out.println(s1.substring(0));
 		System.out.println("---------Generate Possible Sub String--------");
 		generateAllPosibleSubString("abc");
+		System.out.println("---------Generate Possible Sub String without using inbuild method--------");
+		generateAllSubString("abc");
 	}
 	
 	public static void generateAllPosibleSubString(String s) {
@@ -24,6 +26,21 @@ public class SubString {
 				System.out.print(s.substring(i, j+1)+" ");
 			}
 			System.out.println();
+		}
+	}
+	
+	//Without using inbuild method
+	public static void generateAllSubString(String s) {
+		for(int i=0;i<s.length();i++)
+		{
+			for(int j=i;j<s.length();j++)
+			{
+				for(int k=i;k<=j;k++)
+				{
+					System.out.print(s.charAt(k));
+				}
+				System.out.println();
+			}
 		}
 	}
 
